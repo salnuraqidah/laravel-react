@@ -30,6 +30,7 @@ export default function Input({
     variant = "primary",
     placeholder,
     isError,
+    ...props
 }) {
     const input = useRef();
 
@@ -39,13 +40,10 @@ export default function Input({
         }
     }, []);
 
-    handleChange = (id) => {
-        // console.log("changed", id);
-    }
-
     return (
         <div className="flex flex-col items-start">
             <input
+                {...props}
                 type={type}
                 name={name}
                 value={value}
@@ -57,7 +55,7 @@ export default function Input({
                 autoComplete={autoComplete}
                 required={required}
                 placeholder={placeholder}
-                onChange={(e) => handleChange(e)}
+                // onChange={(e) => handleChange(e)}
 
             />
         </div>
